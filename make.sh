@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# ensure bdftopcf is installed
+if ! command -v fonttosfnt > /dev/null; then
+    echo 'error : install fonttosfnt fist' >&2
+    exit 1
+fi
+
+for font in *.bdf; do
+    fonttosfnt -v -m 2 -o "${font%.*}.otb" "$font"
+done
