@@ -2,7 +2,7 @@
 
 # ensure bdftopcf is installed
 if ! command -v fonttosfnt > /dev/null; then
-    echo 'error : install fonttosfnt fist' >&2
+    echo 'error : install fonttosfnt first' >&2
     exit 1
 fi
 
