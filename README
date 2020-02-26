@@ -1,1 +1,9 @@
 various fonts for backup and sharing purpose
+
+usage :
+$ ./make.sh
+$ cp bin/* ~/.local/share/fonts
+$ fc-cache -fv
+
+depends on :
+* fonttosfnt
