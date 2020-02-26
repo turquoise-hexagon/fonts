@@ -1,9 +1,19 @@
-various fonts for backup and sharing purpose
+fonts
+=====
+    various fonts for backup and sharing purpose
+        - fruity
+            a monospaced bitmap font
+        - olive
+            a regular bitmap font
+        - mango
+            an iconic bitmap font
 
-usage :
-$ ./make.sh
-$ cp bin/* ~/.local/share/fonts
-$ fc-cache -fv
+usage
+-----
+    $ ./make.sh
+    $ cp bin/* ~/.local/share/fonts
+    $ fc-cache -fv
 
-depends on :
-* fonttosfnt
+depends on
+----------
+    * fonttosfnt
