@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# check for fonttosfnt
 type fonttosfnt > /dev/null 2>&1 || {
     echo 'error : install fonttosfnt first' >&2
     exit 1
