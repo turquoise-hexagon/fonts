@@ -17,10 +17,10 @@ install : all
 
 uninstall :
 	@echo "uninstalling fonts..."
-	@for font in src/*.bdf; do  \
-		font=$${font##*/}; 		\
+	@for font in src/*.bdf; do \
+		font=$${font##*/}; \
 		font=$${font%.bdf}.otb; \
-		rm $(FNTDIR)/$$font;    \
+		rm $(FNTDIR)/$$font; \
 	done
 
 .PHONY : all clean install uninstall
