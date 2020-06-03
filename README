@@ -10,10 +10,11 @@ fonts
 
 usage
 -----
-    $ ./make.sh
+    $ make
     $ cp bin/* ~/.local/share/fonts
     $ fc-cache -fv
 
 depends on
 ----------
     * fonttosfnt
+    * make
