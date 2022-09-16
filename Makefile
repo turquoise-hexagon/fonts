@@ -1,26 +1,21 @@
-BIN = $(shell find . -type f -name '*.bdf' | sed -E 's|.*/(.*)\.bdf|bin/\1.otb|g')
-
 PREFIX ?= $(DESTDIR)/usr
-FNTDIR  = $(PREFIX)/share/fonts/X11/misc
+FONTDIR = $(PREFIX)/share/fonts/X11/misc
+
+SRC = $(wildcard *.bdf)
+BIN = $(SRC:.bdf=.otf)
 
 all : $(BIN)
 
-bin/%.otb : src/%.bdf
-	@mkdir -p bin
+$(BIN) : $(SRC)
 	fonttosfnt -o $@ $<
 
 clean :
-	rm -rf bin
+	rm $(BIN)
 
 install : all
-	install -Dm644 bin/*.otb -t "$(FNTDIR)"
+	install -Dm644 $(BIN) -t $(FONTDIR)
 
 uninstall :
-	@echo "uninstalling fonts..."
-	@for font in src/*.bdf; do \
-		font=$${font##*/}; \
-		font=$${font%.bdf}.otb; \
-		rm "$(FNTDIR)/$$font"; \
-	done
+	rm -f $(addprefix $(FONTDIR)/,$(BIN))
 
 .PHONY : all clean install uninstall
